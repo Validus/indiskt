@@ -52,20 +52,6 @@ class Application_Model_OrderProcess
     return $dbTable->fetchAll($select);
   }
 
-  /*
-  public function getUnpaid($expectedPayment)
-  {
-    $dbTable = new Application_Model_DbTable_Order();
-
-    $select = $dbTable->select()
-      ->where('day = ?', $day)
-      ->where('amount_paid != ?', $expectedPayment)
-      ->order('person');
-
-    return $this->fetchAll($select);
-  }
-   */
-
   public function getAll($day)
   {
     $dbTable = new Application_Model_DbTable_Order();
@@ -75,6 +61,18 @@ class Application_Model_OrderProcess
       ->order('person');
 
     return $dbTable->fetchAll($select);
+  }
+
+  public function getPaidSum($day)
+  {
+    $dbTable = new Application_Model_DbTable_Order();
+
+    $select = $dbTable->select()
+      ->from($dbTable, array('SUM(amount_paid) AS paid_sum'))
+      ->where('day = ?', $day);
+
+    $row = $dbTable->fetchRow($select);
+    return $row['paid_sum'];
   }
 
 }

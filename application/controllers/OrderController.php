@@ -61,6 +61,8 @@ class OrderController extends Zend_Controller_Action
     $this->view->foodSummary = $orderProcess->getFoodSummary($this->today);
     $this->view->drinkSummary = $orderProcess->getDrinkSummary($this->today);
     $this->view->all = $orderProcess->getAll($this->today);
+    $this->view->paidSum = $orderProcess->getPaidSum($this->today);
+    $this->view->unpaidSum = 60 * count($this->view->all) - $orderProcess->getPaidSum($this->today);
   }
 
 
