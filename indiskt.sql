@@ -33,7 +33,7 @@ CREATE TABLE `order` (
   `amount_paid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `day` (`day`,`person`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
