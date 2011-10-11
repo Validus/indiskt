@@ -1,0 +1,44 @@
+<h1>Indiskt <?= $this->today ?></h1>
+
+<p>Totalt antal beställningar: <?= count($this->all); ?></p>
+
+<h2>Matbeställning</h2>
+
+<table>
+<?php foreach ($this->foodSummary as $entry): ?>
+<tr>
+<td><?= $entry->count ?></td>
+<td><?= $entry->base_dish ?></td>
+<td><?= $entry->power ?></td>
+<td><?= $entry->rice ? 'Med ris' : 'Utan ris' ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<h2>Dryck</h2>
+
+<table>
+<?php foreach ($this->drinkSummary as $entry): ?>
+<tr>
+<td><?= $entry->count ?></td>
+<td><?= $entry->drink ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<h2>Vem beställde vad?</h2>
+
+<table>
+<?php foreach ($this->all as $entry): ?>
+<tr>
+<td><?= $entry->person ?></td>
+<td><?= $entry->base_dish ?></td>
+<td><?= $entry->power ?></td>
+<td><?= $entry->rice ? 'Med ris' : 'Utan ris' ?></td>
+<td><?= $entry->drink ?></td>
+<td><?= $entry->amount_paid ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+

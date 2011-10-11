@@ -1,0 +1,43 @@
+
+<a href="/order/summary">Sammanställning</a>
+
+<form action="/order/add" method="POST">
+
+<table>
+
+<tr>
+<td><label for="person">UID</label></td>
+<td><input name="person" type="text"/></td>
+</tr>
+
+<tr>
+<td><label for="base_dish">Maträtt</label></td>
+<td><input name="base_dish" type="text" value="Vindaloo"/></td>
+</tr>
+
+<tr>
+<td><label for="rice">Ris? </label></td>
+<td><input name="rice" type="checkbox" value="1" checked="checked"/></td>
+</tr>
+
+<tr>
+<td><label for="power">Styrka</label></td>
+<td><input name="power" type="text" value="medium"/></td>
+</tr>
+
+<tr>
+<td><label for="drink">Dryck</label></td>
+<td><input name="drink" type="text" value="naturell"/></td>
+</tr>
+
+<tr>
+<td><label for="amount_paid">Betalt (SEK)</label></td>
+<td><input name="amount_paid" type="text" value="0"/></td>
+</tr>
+
+<td>&nbsp;</td>
+<td><input name="add" type="submit" value="Lägg till beställning"/></td>
+
+</table>
+
+</form>
