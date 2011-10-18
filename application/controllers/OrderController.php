@@ -40,7 +40,7 @@ class OrderController extends Zend_Controller_Action
     $orderProcess = new Application_Model_OrderProcess();
     $orderProcess->add($order);
 
-    $this->_postRedirectGet->gotoUrl('/order/show/?person='.urlencode($order->person));
+    $this->_postRedirectGet->gotoUrl('/order/summary');
   }
 
   public function showAction()
