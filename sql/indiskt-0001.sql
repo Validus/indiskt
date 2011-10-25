@@ -1,0 +1,1 @@
+ALTER TABLE  `order` ADD  `paid_to` VARCHAR( 32 ) NULL DEFAULT NULL;

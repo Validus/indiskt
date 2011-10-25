@@ -29,7 +29,7 @@ class OrderController extends Zend_Controller_Action
   {
     $order = new stdClass();
 
-    $keys = array('person','base_dish','rice','power','drink','amount_paid'); 
+    $keys = array('person','base_dish','rice','power','drink','amount_paid','paid_to'); 
     foreach($keys as $key)
     {
       $order->$key = trim($this->_getParam($key));
@@ -60,9 +60,9 @@ class OrderController extends Zend_Controller_Action
     $this->view->today = $this->today;
     $this->view->foodSummary = $orderProcess->getFoodSummary($this->today);
     $this->view->drinkSummary = $orderProcess->getDrinkSummary($this->today);
+    $this->view->payAgentSummary = $orderProcess->getPayAgentSummary($this->today);
+    $this->view->unpaidSummary = $orderProcess->getUnpaidSummary($this->today);
     $this->view->all = $orderProcess->getAll($this->today);
-    $this->view->paidSum = $orderProcess->getPaidSum($this->today);
-    $this->view->unpaidSum = 60 * count($this->view->all) - $orderProcess->getPaidSum($this->today);
   }
 
 

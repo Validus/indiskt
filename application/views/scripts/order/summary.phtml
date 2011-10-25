@@ -2,9 +2,29 @@
 
 <p>Totalt antal beställningar: <?= count($this->all); ?></p>
 
-<p>Betalt: <?= $this->paidSum; ?> kr</p>
+<h2>Personer som hämtar mat</h2>
 
-<p>Ej betalt: <?= $this->unpaidSum; ?> kr</p>
+<table>
+<th>Person</th>
+<th>Kontanter</th>
+<th>Antal att betala för</th>
+<?php foreach ($this->payAgentSummary as $entry): ?>
+<tr>
+<td><?= $entry->paid_to ?></td>
+<td><?= $entry->paid_sum ?></td>
+<td><?= $entry->count ?></td>
+</tr>
+<?php endforeach; ?>
+<tr><td colspan="3"><hr/></td></tr>
+<?php foreach ($this->unpaidSummary as $entry): ?>
+<tr>
+<td><?= $entry->person ?></td>
+<td>&nbsp;</td>
+<td>1</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
 
 
 <h2>Matbeställning</h2>

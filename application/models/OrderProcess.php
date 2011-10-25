@@ -52,6 +52,34 @@ class Application_Model_OrderProcess
     return $dbTable->fetchAll($select);
   }
 
+  public function getPayAgentSummary($day)
+  {
+    $dbTable = new Application_Model_DbTable_Order();
+
+    $columns = array('paid_to');
+    $select = $dbTable->select()
+      ->from($dbTable, array_merge(array('COUNT(*) AS count', 'SUM(amount_paid) AS paid_sum'), $columns))
+      ->where('day = ?', $day)
+      ->where('paid_to IS NOT NULL')
+      ->where('paid_to != ""')
+      ->group($columns)
+      ->order($columns);
+
+    return $dbTable->fetchAll($select);
+  }
+
+  public function getUnpaidSummary($day)
+  {
+    $dbTable = new Application_Model_DbTable_Order();
+
+    $select = $dbTable->select()
+      ->where('day = ?', $day)
+      ->where('(paid_to IS NULL OR paid_to = "")')
+      ->order('person');
+
+    return $dbTable->fetchAll($select);
+  }
+
   public function getAll($day)
   {
     $dbTable = new Application_Model_DbTable_Order();
@@ -62,18 +90,5 @@ class Application_Model_OrderProcess
 
     return $dbTable->fetchAll($select);
   }
-
-  public function getPaidSum($day)
-  {
-    $dbTable = new Application_Model_DbTable_Order();
-
-    $select = $dbTable->select()
-      ->from($dbTable, array('SUM(amount_paid) AS paid_sum'))
-      ->where('day = ?', $day);
-
-    $row = $dbTable->fetchRow($select);
-    return $row['paid_sum'];
-  }
-
 }
 
