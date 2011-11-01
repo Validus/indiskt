@@ -74,7 +74,7 @@ class Application_Model_OrderProcess
 
     $select = $dbTable->select()
       ->where('day = ?', $day)
-      ->where('(paid_to IS NULL OR paid_to = "")')
+      ->where('(paid_to IS NULL OR paid_to = "" OR amount_paid != 60)')
       ->order('person');
 
     return $dbTable->fetchAll($select);
@@ -90,5 +90,38 @@ class Application_Model_OrderProcess
 
     return $dbTable->fetchAll($select);
   }
+
+  public function getPeople()
+  {
+    $dbTable = new Application_Model_DbTable_Order();
+    $select = $dbTable->select()
+      ->from($dbTable, 'person')
+      ->distinct()
+      ->order('person');
+    $rows = $dbTable->fetchAll($select);
+    $people = array();
+    foreach ($rows as $row)
+    {
+       $people[] = $row->person;
+    }
+    return $people;
+  }
+
+  public function getPowers()
+  {
+    $dbTable = new Application_Model_DbTable_Order();
+    $select = $dbTable->select()
+      ->from($dbTable, 'power')
+      ->distinct()
+      ->order('power');
+    $rows = $dbTable->fetchAll($select);
+    $powers = array();
+    foreach ($rows as $row)
+    {
+       $powers[] = $row->power;
+    }
+    return $powers;
+  }
+
 }
 

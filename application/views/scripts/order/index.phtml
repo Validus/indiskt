@@ -37,7 +37,20 @@
 
 <tr>
 <td><label for="paid_to">Betalt till person</label></td>
-<td><input name="paid_to" type="text" value=""/></td>
+<td>
+<select name="paid_to">
+<option value="">(ingen)</option>
+<optgroup label="Snabbval">
+<option value="David">David</option>
+<option value="xfrehaa">Fredrik Håård</option>
+</optgroup>
+<optgroup label="Alla">
+<?php foreach ($this->people as $person): ?>
+<option value="<?= htmlentities($person); ?>"><?= htmlentities($person); ?></option>
+<?php endforeach; ?>
+</optgroup>
+</select>
+</td>
 </tr>
 
 <td>&nbsp;</td>

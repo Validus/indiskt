@@ -22,7 +22,9 @@ class OrderController extends Zend_Controller_Action
 
   public function indexAction()
   {
-    // action body
+    $orderProcess = new Application_Model_OrderProcess();
+    $this->view->people = $orderProcess->getPeople();
+    $this->view->powers = $orderProcess->getPowers();
   }
 
   public function addAction()
