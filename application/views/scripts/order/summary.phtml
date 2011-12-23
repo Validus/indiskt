@@ -58,12 +58,12 @@
 <table>
 <?php foreach ($this->all as $entry): ?>
 <tr>
-<td><?= $entry->person ?></td>
+<td><a href="/order/show?person=<?= $this->escape($entry->person) ?>"><?= $this->escape($entry->person) ?></a></td>
 <td><?= $entry->base_dish ?></td>
 <td><?= $entry->power ?></td>
 <td><?= $entry->rice ? 'Med ris' : 'Utan ris' ?></td>
 <td><?= $entry->drink ?></td>
-<td><?= $entry->amount_paid ?></td>
+<!-- <td><?= $entry->amount_paid ?></td> -->
 <td><?= $entry->paid_to ?></td>
 </tr>
 <?php endforeach; ?>
