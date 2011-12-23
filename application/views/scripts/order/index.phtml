@@ -22,12 +22,27 @@
 
 <tr>
 <td><label for="power">Styrka</label></td>
-<td><input name="power" type="text" value="medium"/></td>
+<td>
+<select name="power" style="width:100%;">
+<option value="medium">Medium</option>
+<option value="hot">Stark</option>
+<option value="xhot">Extra Stark</option>
+</select>
+</td>
 </tr>
 
 <tr>
 <td><label for="drink">Dryck</label></td>
-<td><input name="drink" type="text" value="naturell"/></td>
+<td>
+<select name="drink" style="width:100%;">
+<option value="naturell">Mineralvatten Naturell</option>
+<option value="citrus">Mineralvatten Citrus</option>
+<option value="cola">Coca-Cola</option>
+<option value="cola light">Coca-Cola Light</option>
+<option value="fanta">Fanta</option>
+<option value="sprite">Sprite</option>
+</select>
+</td>
 </tr>
 
 <tr>
@@ -38,7 +53,7 @@
 <tr>
 <td><label for="paid_to">Betalt till person</label></td>
 <td>
-<select name="paid_to">
+<select name="paid_to" style="width:100%;">
 <option value="">(ingen)</option>
 <optgroup label="Snabbval">
 <option value="David">David</option>
