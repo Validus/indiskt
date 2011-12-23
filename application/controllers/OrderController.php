@@ -31,10 +31,15 @@ class OrderController extends Zend_Controller_Action
   {
     $order = new stdClass();
 
-    $keys = array('person','base_dish','rice','power','drink','amount_paid','paid_to'); 
+    $keys = array('person','base_dish','rice','power','drink','paid_to'); 
     foreach($keys as $key)
     {
       $order->$key = trim($this->_getParam($key));
+    }
+
+    if (!empty($order->paid_to))
+    {
+      $order->amount_paid = 60; // MAGIC NUMBER
     }
 
     $order->day = $this->today;

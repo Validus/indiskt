@@ -46,11 +46,6 @@
 </tr>
 
 <tr>
-<td><label for="amount_paid">Betalt (SEK)</label></td>
-<td><input name="amount_paid" type="text" value="0"/></td>
-</tr>
-
-<tr>
 <td><label for="paid_to">Betalt till person</label></td>
 <td>
 <select name="paid_to" style="width:100%;">
@@ -61,7 +56,7 @@
 </optgroup>
 <optgroup label="Alla">
 <?php foreach ($this->people as $person): ?>
-<option value="<?= htmlentities($person); ?>"><?= htmlentities($person); ?></option>
+<option value="<?= $this->escape($person); ?>"><?= $this->escape($person); ?></option>
 <?php endforeach; ?>
 </optgroup>
 </select>
