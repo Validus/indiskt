@@ -123,5 +123,19 @@ class Application_Model_OrderProcess
     return $powers;
   }
 
+  public function paid($id, $paidTo, $paysonRef)
+  {
+    $table = new Application_Model_DbTable_Order();
+    $where = $table->getAdapter()->quoteInto('id = ?', $id);
+    
+    $data = array(
+      'paid_to' => $paidTo,
+      'amount_paid' => 60,
+      'paysonRef' => $paysonRef,
+    );
+
+    $table->update($data, $where);
+  }
+
 }
 

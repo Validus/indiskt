@@ -17,6 +17,15 @@ class Payson_Model_Helper
     $this->okUrl        = new Payson_Model_Url($options['okUrl']);
   }
 
+  public function validatePaysonRedirect($okUrl, $paysonRef, $md5)
+  {
+    $expectedMd5String = $okUrl . $paysonRef . $this->key;
+    if (md5($expectedMd5String) != $md5)
+    {
+      throw new Exception("Request checksum was not valid");
+    }
+  }
+
   private function calculateChecksum(
     Payson_Model_Cost $cost, 
     Payson_Model_Cost $extraCost, 

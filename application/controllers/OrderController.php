@@ -2,7 +2,6 @@
 
 class OrderController extends Zend_Controller_Action
 {
-
   protected $_postRedirectGet = null;
 
   public function init()

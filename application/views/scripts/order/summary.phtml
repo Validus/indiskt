@@ -56,6 +56,15 @@
 <h2>Vem beställde vad?</h2>
 
 <table>
+<tr>
+<th>Person</th>
+<th>Maträtt</th>
+<th>Styrka</th>
+<th>Ris</th>
+<th>Dryck</th>
+<th>Betalning via</th>
+</tr>
+
 <?php foreach ($this->all as $entry): ?>
 <tr>
 <td><a href="/order/show?person=<?= $this->escape($entry->person) ?>"><?= $this->escape($entry->person) ?></a></td>
@@ -64,9 +73,12 @@
 <td><?= $entry->rice ? 'Med ris' : 'Utan ris' ?></td>
 <td><?= $entry->drink ?></td>
 <!-- <td><?= $entry->amount_paid ?></td> -->
+<?php if ($entry->paysonref): ?>
+<td><img src="/payson/payson_betald_btn.png" alt="Betald via Payson" width="84" height="21" title="Payson-referens: <?= $entry->paysonref ?>"></td>
+<?php elseif (empty($entry->paid_to) || $entry->paid_to == 'David'): ?>
+<td><a href="/payson/payment?refNr=<?= $entry->id ?>&email=<?= $this->escape($entry->person) ?>"  width="93" height="30" title="7 kr i avgift tillkommer"><img src="/payson/payson_betala_btn.png" alt="Betala till David via Payson"/></a></td>
+<?php elseif ($entry->paid_to): ?>
 <td><?= $entry->paid_to ?></td>
-<?php if (empty($entry->paid_to) || $entry->paid_to == 'David'): ?>
-<td><a href="/payson/payment?refNr=<?= $entry->id ?>&email=<?= $this->escape($entry->person) ?>" title="7 kr i avgift tillkommer">Betala till David via Payson</a></td>
 <?php endif; ?>
 </tr>
 <?php endforeach; ?>
