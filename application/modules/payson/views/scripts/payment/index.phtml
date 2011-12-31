@@ -1,0 +1,33 @@
+<?php if (isset($this->exception)): ?>
+<p><?= $this->exception->getMessage() ?></p>
+
+<p>Det krävs en giltig e-postadress för att betala via Payson.</p>
+<form method="get">
+<input name="email" type="text" value="<?= $this->escape($this->email) ?>"/>
+<input name="refNr" type="hidden" value="<?= $this->escape($this->refNr) ?>"/>
+<input type="submit" value="OK!"/>
+</form>
+
+<?php elseif (isset($this->form)): ?>
+
+<p>Den här sidan existerar enbart för att bygga ett formulär som skickas till Payson.</p>
+
+<p>Det kostar 7 kr extra att betala via Payson. Enligt deras <a 
+href="https://www.payson.se/prislista" target="_blank">prislista</a> så tar de 
+ut en avgift på 3 kr + 3% per transaktion. Då hamnar pengarna på ett 
+"Payson-konto" som det kostar 2 kr att göra uttag från.</p>
+
+<p>I Paysons exempel så drar de av procensatsen först, så jag behöver 65 kr 
+kvar efter att procentsatsen är dragen. Min avgift blir alltså
+(60+2+3)/0,97-60=7,01...  men jag avrundar till 7 kr.</p>
+
+<form method="post" action="<?= $this->escape($this->form->url) ?>">
+
+<?php foreach ($this->form->fields as $key => $value): ?>
+<input type="hidden" name="<?= $this->escape($key) ?>" value="<?= $this->escape($value) ?>"/>
+<?php endforeach ?>
+
+<input type="submit" value="Betala via Payson"/>
+</form>
+
+<?php endif; ?>

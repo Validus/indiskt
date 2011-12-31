@@ -26,8 +26,45 @@
           <dbTableFile dbTableName="Order"/>
         </dbTableDirectory>
         <modelFile modelName="OrderProcess"/>
+        <modelFile modelName="Payson"/>
       </modelsDirectory>
-      <modulesDirectory enabled="false"/>
+      <modulesDirectory>
+        <moduleDirectory moduleName="payson">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Payment">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="done"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false"/>
+          <layoutsDirectory enabled="false"/>
+          <modelsDirectory>
+            <dbTableDirectory enabled="false"/>
+            <modelFile modelName="RefNr"/>
+            <modelFile modelName="Cost"/>
+            <modelFile modelName="Email"/>
+            <modelFile modelName="Description"/>
+            <modelFile modelName="Url"/>
+            <modelFile modelName="Post"/>
+            <modelFile modelName="Helper"/>
+            <modelFile modelName="Exception"/>
+          </modelsDirectory>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Payment">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Payment">
+                <viewScriptFile forActionName="done"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
+      </modulesDirectory>
       <viewsDirectory>
         <viewScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Index">
@@ -92,6 +129,16 @@
             <testApplicationActionMethod forActionName="summary"/>
           </testApplicationControllerFile>
         </testApplicationControllerDirectory>
+        <testApplicationModulesDirectory>
+          <testApplicationModuleDirectory forModuleName="payson">
+            <testApplicationControllerDirectory>
+              <testApplicationControllerFile forControllerName="Payment">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="done"/>
+              </testApplicationControllerFile>
+            </testApplicationControllerDirectory>
+          </testApplicationModuleDirectory>
+        </testApplicationModulesDirectory>
       </testApplicationDirectory>
       <testLibraryDirectory/>
     </testsDirectory>

@@ -65,6 +65,9 @@
 <td><?= $entry->drink ?></td>
 <!-- <td><?= $entry->amount_paid ?></td> -->
 <td><?= $entry->paid_to ?></td>
+<?php if (empty($entry->paid_to) || $entry->paid_to == 'David'): ?>
+<td><a href="/payson/payment?refNr=<?= $entry->id ?>&email=<?= $this->escape($entry->person) ?>" title="7 kr i avgift tillkommer">Betala till David via Payson</a></td>
+<?php endif; ?>
 </tr>
 <?php endforeach; ?>
 </table>

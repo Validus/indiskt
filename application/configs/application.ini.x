@@ -1,4 +1,3 @@
-; vim: syntax=dosini
 [production]
 phpSettings.display_startup_errors = 0
 phpSettings.display_errors = 0
@@ -8,19 +7,10 @@ bootstrap.class = "Bootstrap"
 appnamespace = "Application"
 resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
 resources.frontController.params.displayExceptions = 0
-resources.frontController.moduleDirectory = APPLICATION_PATH "/modules"
-resources.modules[] =
 resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/"
 resources.db.adapter       = "PDO_MYSQL"
 resources.db.params.host   = "localhost"
 resources.db.params.charset = "utf8"
-
-payson.agentId = 
-payson.key = ""
-payson.url = "https://www.payson.se/Merchand/Default.aspx"
-; payson.url = "https://www.payson.se/TestAgent/default.aspx"
-payson.sellerEmail = "indiskt@example.net"
-payson.okUrl = "http://indiskt.example.net/payson/payment/done"
 
 [staging : production]
 
@@ -36,5 +26,5 @@ resources.frontController.params.displayExceptions = 1
 ; Database connection
 resources.db.params.dbname = "indiskt"
 resources.db.params.username   = "indiskt"
-resources.db.params.password   = ""
+resources.db.params.password   = "mVd4W0mX"
 
