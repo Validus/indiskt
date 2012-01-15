@@ -1,79 +1,60 @@
-
-<a href="/order/summary">Sammanställning</a>
-
-<form action="/order/add" method="POST">
-
-<table>
-
-<tr title="Om du vill betala med Payson så kan du lika gärna ange din e-postadress här direkt.">
-<td><label for="person">UID/e-postadress</label></td>
-<td><input name="person" type="text"/></td>
-</tr>
-
-<tr>
-<td><label for="base_dish">Maträtt</label></td>
-<td><input name="base_dish" type="text" value="Vindaloo"/></td>
-</tr>
-
-<tr>
-<td><label for="rice">Ris? </label></td>
-<td><input name="rice" type="checkbox" value="1" checked="checked"/></td>
-</tr>
-
-<tr>
-<td><label for="power">Styrka</label></td>
-<td>
-<select name="power" style="width:100%;">
-<option value="medium">Medium</option>
-<option value="hot">Stark</option>
-<option value="xhot">Extra Stark</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td><label for="drink">Dryck</label></td>
-<td>
-<select name="drink" style="width:100%;">
-<option value="naturell">Mineralvatten Naturell</option>
-<option value="citrus">Mineralvatten Citrus</option>
-<option value="cola">Coca-Cola</option>
-<option value="cola light">Coca-Cola Light</option>
-<option value="fanta">Fanta</option>
-<option value="sprite">Sprite</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td><label for="paid_to">Betalar till person</label></td>
-<td>
-<select name="paid_to" style="width:100%;">
-<option value="">(ingen)</option>
-<optgroup label="Snabbval">
-<option value="David">David</option>
-<option value="xfrehaa">Fredrik Håård</option>
-</optgroup>
-<optgroup label="Alla">
-<?php foreach ($this->people as $person): ?>
-<option value="<?= $this->escape($person); ?>"><?= $this->escape($person); ?></option>
-<?php endforeach; ?>
-</optgroup>
-</select>
-</td>
-</tr>
-
-<td>&nbsp;</td>
-<td><input name="add" type="submit" value="Lägg till beställning"/></td>
-
-</table>
-
-</form>
-
-
-<p>Efter beställning kan du betala till David via Payson.</p>
-
-<a href="https://www.payson.se" title="Payson internetbetalningar" style="width: 210px;
-height: 80px; background: url('https://www.payson.se/sites/all/files/images/external/payson210x80.png');
-float: left; text-indent: -6789px">Kortbetalning online</a>
+				<h3>Indiskt</h3>
+				<form action="/order/add" method="POST">
+					<div class="inputField">
+						<label for="person">UID/e-postadress</label>
+						<input type="text" id="person" name="person"/>
+					</div>
+					<div class="inputField">
+						<label for="base_dish">Maträtt</label>
+						<input type="text" id="base_dish" name="base_dish" class="tooltip">
+						<span class="toolTipContent" id="toolTipContent">Klicka på meny länken breve för att välja</span>
+						<div class="meny" onclick="showMeny()" >
+						<a class="tooltip" href="#"></a>
+						</div>
+					</div>
+					<div class="inputField">
+						<label for="rice">Ris?</label>
+						<input id="rice" name="rice" type="checkbox" value="1" checked="checked"/>
+					</div>
+					<div class="inputField">
+						<label for="power">Styrka</label>
+						<select id="power" name="power">
+							<option value="medium">Medium</option>
+							<option value="hot">Stark</option>
+							<option value="xhot">Extra Stark</option>
+						</select>
+					</div>
+					<div class="inputField">
+						<label for="drink">Dryck</label>
+						<select id="drink" name="drink">
+							<option value="naturell">Mineralvatten Naturell</option>
+							<option value="citrus">Mineralvatten Citrus</option>
+							<option value="cola">Coca-Cola</option>
+							<option value="cola light">Coca-Cola Light</option>
+							<option value="fanta">Fanta</option>
+							<option value="sprite">Sprite</option>
+						</select>
+					</div>
+					<div class="inputField">
+						<label for="paid_to">Betalar till person</label>
+						<select id="paid_to" name="paid_to">
+              <option value="">(ingen)</option>
+              <optgroup label="Snabbval">
+              <option value="David">David</option>
+              <option value="xfrehaa">Fredrik Håård</option>
+              </optgroup>
+              <optgroup label="Alla">
+              <?php foreach ($this->people as $person): ?>
+              <option value="<?= $this->escape($person); ?>"><?= $this->escape($person); ?></option>
+              <?php endforeach; ?>
+              </optgroup>
+            </select>
+					</div>
+					<input name="add" type="submit" value="Lägg till beställning" class="orderButton">
+					<p>Efter beställning kan du betala till David via Payson.</p>
+					<a href="https://www.payson.se" title="Payson internetbetalningar" style="width: 210px;
+					height: 80px; background: url('https://www.payson.se/sites/all/files/images/external/payson210x80.png');
+					float: left; text-indent: -6789px">Kortbetalning online</a>
+					<a href="/order/summary" style="float: right; color: rgb(22,162,208);">Sammanställning</a>
+        </form>
 

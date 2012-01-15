@@ -1,11 +1,46 @@
 <?= $this->doctype() ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <?= $this->headMeta() ?>
   <?= $this->headTitle() ?>
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/main_ie.css"/>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
+<body onload="loadCss()">
+		<div class="main">
+			<section class="mainSection">
 <?= $this->layout()->content; ?>
+      </section>
+    </div>
+
+<?= $this->partial('_book.phtml') ?>
+
+      <div class="about">
+        <div class="aboutLink">
+          About
+        </div>
+        <div class="aboutInner">
+          <p class="aboutText">Detta är gjort av David Eriksson och Christian Johannesson på Softhouse. Anpassat för användning i Chrome och Firefox </p>
+        </div>
+      </div>
+
+      <div class="ieMain">
+        <p>Hej,
+        <br>
+        Nu sitter du inte med en riktigt webläsare utan Internet Explorer, vi 
+ber dig därför ladda hem en bra browser härifrån: <a 
+href="http://www.google.co.jp/chrome/?hl=sv">Chrome</a> eller en helt OK browser 
+härifrån: <a href="http://www.mozilla.org/sv-SE/firefox/new/">Firefox</a>
+        <br>
+        // 
+        <br>
+        Christian på Softhouse
+        </p>
+      </div>
 </body>
 </html>
