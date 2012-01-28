@@ -1,0 +1,219 @@
+.ieMain {
+	display: none;
+}
+
+.hidden {
+	top: -1000px;
+}
+
+body {
+	background: whitesmoke;
+	margin: 0 auto;
+	font-family: 'Coming Soon';
+}
+
+label {
+	display: block;
+	margin-left: 20px;
+}
+
+/* .main {
+	background: whitesmoke;
+	border-radius: 10px;
+} */
+
+.mainSection {
+	
+
+}
+
+h3{
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	padding: 10px;
+	color: white;
+	border-bottom: solid 1px #CCC;
+	text-align: center;
+}
+
+.inputField {
+	clear: both !important;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+
+}
+
+.mainSection form {
+	margin:0 auto;
+	text-align:left;
+}
+
+.inputField input:not([type='submit']) {
+	margin-left: 20px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+	width: 155px;
+}
+.inputField select {
+	margin-left: 20px;
+	width: 155px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.meny {
+	height: 23px;
+	width: 23px;
+	background-image: url(../image/menu-icon.jpg);
+	background-size: 16px auto;
+	background-repeat: no-repeat;
+	display: inline-block;
+	/* top: -23px; */
+	/* position: relative; */
+	/* float: right; */
+	/* left: 26px; */
+	cursor:pointer;
+	image-rendering: -moz-crisp-edges;
+	/* float: right; */
+	position: relative;
+	/* top: -24px; */
+	clear: both !important;
+	top: 2px;
+	left: 5px;
+}
+
+.about {
+	display:none;
+/*	position: fixed;
+ 	bottom: 44px;
+	width: 100%;
+	text-align: center;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;  */
+}
+
+.aboutLink {
+	background-image: linear-gradient(bottom, rgb(234,102,2) 12%, rgb(235,153,94) 75%);
+	background-image: -o-linear-gradient(bottom, rgb(234,102,2) 12%, rgb(235,153,94) 75%);
+	background-image: -moz-linear-gradient(bottom, rgb(234,102,2) 12%, rgb(235,153,94) 75%);
+	background-image: -webkit-linear-gradient(bottom, rgb(234,102,2) 12%, rgb(235,153,94) 75%);
+	background-image: -ms-linear-gradient(bottom, rgb(234,102,2) 12%, rgb(235,153,94) 75%);
+	border-top: solid 1px #CCC;
+	padding: 10px;
+	letter-spacing: 2px;
+}
+
+.aboutInner {
+	display:none;
+/* 	position: fixed;
+	bottom: -110px;
+	background-color: #EA6502;
+  	width: 100%;
+	height: 155px;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;  */
+}
+
+.displayInner {
+	bottom: 0px !Important;
+}
+
+.aboutDisplayInner {
+	bottom: 155px !important;
+}
+
+.orderButton {
+	background-image: linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
+	background-image: -o-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
+	background-image: -moz-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
+	background-image: -webkit-gradient(linear, left bottom,left top, color-stop(0.25, rgb(21,161,208)),color-stop(1, rgb(101,194,225)));
+	background-image: -ms-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
+	box-shadow: 1px 1px 1px #7f7f7f;
+	width: 200px;
+	border-radius: 10px;
+	border: 1px solid #0093B2;
+	color: white;
+	font-weight: bolder;
+}
+
+.payson {
+	width: 210px;
+	height: 80px; 
+	background: url('https://www.payson.se/sites/all/files/images/external/payson210x80.png');
+	display: block;
+	text-indent: -6789px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.summary {
+	color: rgb(22,162,208);
+	width: 210px;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.note {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+}
+
+.view {
+	bottom: 0px;
+	padding: 10px;
+	text-align: center;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	padding: 10px;
+	letter-spacing: 2px;
+	
+}
+.view a{
+	color: white;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+#pageflip-canvas {
+
+	display:none;
+}
+
+#book {
+	z-index: 1000;
+
+}
+
+.view .mobile {
+	display: none;
+}
+
+.nonIndian {
+	display: none;
+}
+.tooltip {
+	float: left;
+}
+.tooltip + span {
+	display: none;
+}
+.tooltip:hover + span {
+	display: none;
+}
+
+.toolTipContent { 
+	display: none;
+}
+.toolTipContent {
+	display: none;
+}
+
+

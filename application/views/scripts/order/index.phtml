@@ -2,11 +2,11 @@
 				<form action="/order/add" method="POST">
 					<div class="inputField">
 						<label for="person">UID/e-postadress</label>
-						<input type="text" id="person" name="person"/>
+						<input type="text" id="person" name="person" placeholder="UID/e-postadress"/>
 					</div>
 					<div class="inputField">
 						<label for="base_dish">Maträtt</label>
-						<input type="text" id="base_dish" name="base_dish" class="tooltip">
+						<input type="text" id="base_dish" name="base_dish" class="tooltip" placeholder="Maträtt">
 						<span class="toolTipContent" id="toolTipContent">Klicka på meny länken bredvid för att välja</span>
 						<div class="meny" onclick="showMeny()" >
 						<a class="tooltip" href="#"></a>
@@ -50,11 +50,11 @@
               </optgroup>
             </select>
 					</div>
-					<input name="add" type="submit" value="Lägg till beställning" class="orderButton">
-					<p>Efter beställning kan du betala till David via Payson.</p>
-					<a href="https://www.payson.se" title="Payson internetbetalningar" style="width: 210px;
-					height: 80px; background: url('https://www.payson.se/sites/all/files/images/external/payson210x80.png');
-					float: left; text-indent: -6789px">Kortbetalning online</a>
-					<a href="/order/summary" style="float: right; color: rgb(22,162,208);">Sammanställning</a>
+					<div class="inputField order">
+						<input name="add" type="submit" value="Lägg till beställning" class="orderButton">
+					</div>
+					<p class="note">Efter beställning kan du betala till David via Payson.</p>
+					<a href="https://www.payson.se" title="Payson internetbetalningar" class="payson">Kortbetalning online</a>
+					<a href="/order/summary" class="summary">Sammanställning</a>
         </form>
 

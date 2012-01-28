@@ -1,0 +1,48 @@
+.hidden {
+	top: -2000px !important;
+}
+.arrowBack { 
+	display: none;
+}
+.arrowNext {
+	display: none;
+}
+.nonIndian {
+	display: none;
+}
+
+#book {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	background: whitesmoke;
+	-webkit-transition-duration: 0.7s;
+	-moz-transition-duration: 0.7s;
+	-o-transition-duration: 0.7s;
+	transition-duration: 0.7s;
+}
+
+#book p {
+	
+	margin: 0;
+}
+#book h2 {
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	padding: 10px;
+	color: white;
+	text-align: center;
+	margin: 0;
+}
+#foodSection  {
+	text-align: center;
+	font-size: 1.2em;
+}
+#foodSection > div:nth-child(even) {
+border-bottom: solid 1px #CCC;
+border-top: solid 1px #CCC;
+	background-color: #F2F2F2;
+}
+#foodSection > div:nth-child(odd) {
+
+	background-color: #EBEBEB;
+}

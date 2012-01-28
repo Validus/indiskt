@@ -1,0 +1,49 @@
+#book {
+	background: url("../image/book.copy.png") no-repeat;
+	position: absolute;
+	width: 830px;
+	height: 520px;
+	left: 50%;
+	top: 25%;
+	margin-left: -400px;
+	margin-top: -125px;
+	-webkit-transition-duration: 0.7s;
+	-moz-transition-duration: 0.7s;
+	-o-transition-duration: 0.7s;
+	transition-duration: 0.7s;
+}
+
+#pages section {
+	background: url("../image/paper.copy.png") no-repeat;
+	display: block;
+	width: 400px;
+	height: 500px;
+	position: absolute;
+	left: 415px;
+	top: 10px;
+	overflow: hidden;
+}
+#pages section>div {
+	display: block;
+	width: 400px;
+	height: 500px;
+	font-size: 11px;
+}
+#pages section p,
+#pages section h3 {
+	padding: 3px 35px;
+	line-height: 1em;
+	text-align: justify;
+}
+#pages section h3{
+	margin: 15px 0 10px;
+}
+
+#pages h2 {
+	text-align: center;
+}
+
+#pageflip-canvas {
+	position: absolute;
+	z-index: 100;
+}

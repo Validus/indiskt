@@ -31,7 +31,7 @@ label {
 	margin: 0 auto;
 }
 
-.inputField input {
+.inputField input:not([type='submit']) {
 	margin-left: 20px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -49,6 +49,12 @@ label {
 	clear: both !important;
 	margin-bottom: 10px;
 
+}
+
+.order {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
 }
 
 
@@ -191,11 +197,10 @@ label {
 }
 
 .orderButton {
-	margin-left: 25%;
 	background-image: linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
 	background-image: -o-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
 	background-image: -moz-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
-	background-image: -webkit-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
+	background-image: -webkit-gradient(linear, left bottom,left top, color-stop(0.25, rgb(21,161,208)),color-stop(1, rgb(101,194,225)));
 	background-image: -ms-linear-gradient(bottom, rgb(22,162,208) 33%, rgb(101,194,225) 67%);
 	box-shadow: 1px 1px 1px #7f7f7f;
 	width: 200px;
@@ -203,6 +208,7 @@ label {
 	border: 1px solid #0093B2;
 	color: white;
 	font-weight: bolder;
+	margin:0 auto;
 }
 /*Not used keeping here anyway */
 .orderButton2 {
@@ -218,52 +224,36 @@ label {
 	background-image: -ms-linear-gradient(bottom, rgb(163,70,3) 33%, rgb(234,102,2) 67%);
 }
 
-#book {
-	background: url("../image/book.copy.png") no-repeat;
-	position: absolute;
-	width: 830px;
-	height: 520px;
-	left: 50%;
-	top: 25%;
-	margin-left: -400px;
-	margin-top: -125px;
-	-webkit-transition-duration: 0.7s;
-	-moz-transition-duration: 0.7s;
-	-o-transition-duration: 0.7s;
-	transition-duration: 0.7s;
+.payson {
+	width: 210px;
+	height: 80px; 
+	background: url('https://www.payson.se/sites/all/files/images/external/payson210x80.png');
+	float: left; 
+	text-indent: -6789px;
 }
 
-#pages section {
-	background: url("../image/paper.copy.png") no-repeat;
-	display: block;
-	width: 400px;
-	height: 500px;
-	position: absolute;
-	left: 415px;
-	top: 10px;
-	overflow: hidden;
-}
-#pages section>div {
-	display: block;
-	width: 400px;
-	height: 500px;
-	font-size: 11px;
-}
-#pages section p,
-#pages section h3 {
-	padding: 3px 35px;
-	line-height: 1em;
-	text-align: justify;
-}
-#pages section h3{
-	margin: 15px 0 10px;
+.summary {
+	float: right; 
+	color: rgb(22,162,208);
 }
 
-#pages h2 {
+.view {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	padding: 10px;
+	color: white;
+	border-bottom: solid 1px #CCC;
 	text-align: center;
+	font-size: 1.17em;
+}
+.view a{
+	color: white;
+	font-weight: bolder;
+	text-decoration: none;
 }
 
-#pageflip-canvas {
-	position: absolute;
-	z-index: 100;
+.view .desktop {
+	display: none;
 }
