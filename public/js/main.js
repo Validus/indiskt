@@ -35,6 +35,11 @@ function loadCss() {
 		   href: "/css/main_ff.css"
 		}).appendTo("head");
 	}
+	
+	if($(".mainSection").css("width") == "800px" && $(".about").css("display") == "none")
+	{
+		$("body").css("width", "800px");
+	}
 }
 
 function flipInner() {
