@@ -9,7 +9,7 @@
 body {
 	background: whitesmoke;
 	margin: 0 auto;
-	font-family: 'Coming Soon';
+	font-family: 'Open Sans', sans-serif;
 }
 
 label {
@@ -29,6 +29,7 @@ label {
 
 h3{
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	background-image: -moz-linear-gradient(bottom, rgb(61,61,61) 33%, rgb(84,83,83) 67%);
 	padding: 10px;
 	color: white;
 	border-bottom: solid 1px #CCC;
@@ -172,6 +173,7 @@ h3{
 	padding: 10px;
 	text-align: center;
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	background-image: -moz-linear-gradient(bottom, rgb(61,61,61) 33%, rgb(84,83,83) 67%);
 	padding: 10px;
 	letter-spacing: 2px;
 	

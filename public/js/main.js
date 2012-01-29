@@ -32,7 +32,7 @@ function loadCss() {
 		$("<link/>", {
 		   rel: "stylesheet",
 		   type: "text/css",
-		   href: "css/main_ff.css"
+		   href: "/css/main_ff.css"
 		}).appendTo("head");
 	}
 }

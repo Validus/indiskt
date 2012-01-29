@@ -1,5 +1,6 @@
 body {
 	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 label {
@@ -84,8 +85,8 @@ label {
 
 .about {
 	position: fixed;
-	top: 54px;
-	left: -16px;
+	top: 57px;
+	left: -18px;
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
 	-o-transition-duration: 0.3s;
@@ -114,7 +115,7 @@ label {
 }
 
 .about:hover {
-	left: 234px;
+	left: 233px;
 }
 .about:hover .aboutInner {
 	left: 0;
@@ -242,6 +243,7 @@ label {
 	bottom: 0px;
 	width: 100%;
 	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.25, rgb(61,61,61)), color-stop(1, rgb(84,83,83)) );
+	background-image: -moz-linear-gradient(bottom, rgb(61,61,61) 33%, rgb(84,83,83) 67%);
 	padding: 10px;
 	color: white;
 	border-bottom: solid 1px #CCC;
